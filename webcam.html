@@ -64,10 +64,12 @@
                 $('#uploadimageModal').modal('show')
 
                 Webcam.set({
-                    width: 350,
-                    height: 350,
+                    width: 320,
+                    height: 240,
+                    crop_width: 320,
+                    crop_height: 240,
                     image_format: 'jpeg',
-                    jpeg_quality: 90
+                    jpeg_quality: 100
                 })
 
                 Webcam.attach('#camera')
@@ -76,6 +78,8 @@
             
             $('#capture').click(function (event) {
                 Webcam.snap((res) => {
+                    console.log(res);
+                    
                     $('#uploadimageModal').modal('hide');
                     $('#uploaded_image').html(`<img src="${res}">`);
                 })
