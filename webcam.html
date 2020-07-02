@@ -66,7 +66,7 @@
                 Webcam.set({
                     width: 320,
                     height: 240,
-                    crop_width: 320,
+                    crop_width: 240,
                     crop_height: 240,
                     image_format: 'jpeg',
                     jpeg_quality: 100
@@ -77,9 +77,7 @@
 
             
             $('#capture').click(function (event) {
-                Webcam.snap((res) => {
-                    console.log(res);
-                    
+                Webcam.snap((res) => {                    
                     $('#uploadimageModal').modal('hide');
                     $('#uploaded_image').html(`<img src="${res}">`);
                 })
