@@ -85,16 +85,19 @@
                     size: 'viewport'
                 })
                     .then(function (res) {
-                        $.ajax({
-                            url: 'upload.php',
-                            type: 'post',
-                            data: {'image': res},
-                            success: function(data) {
-                                $('#uploadimageModal').modal('hide');
-                                $('#uploaded_image').html(data);
-                                $('#upload_image').val('');
-                            }
-                        })
+                        $('#uploadimageModal').modal('hide');
+                        $('#uploaded_image').html(`<img src="${res}" class="img-thumbnail">`);
+                        $('#upload_image').val('');
+                        // $.ajax({
+                        //     url: 'upload.php',
+                        //     type: 'post',
+                        //     data: {'image': res},
+                        //     success: function(data) {
+                        //         $('#uploadimageModal').modal('hide');
+                        //         $('#uploaded_image').html(data);
+                        //         $('#upload_image').val('');
+                        //     }
+                        // })
                     })
             })
 
